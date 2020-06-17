@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+
+    <style>
+@theme-color: #9072af;
+@link-color: white;
+@hover-color: slategray; 
+@base-font: 1.4rem;
+@mobile: (max-width: 500px);
+@tablet: ( max-width: 1100px );
+
+.default-box() {  
+  margin: 1%;
+  padding: 2%;
+}
+
+.flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spacing(@m, @p) {
+  margin: @m;
+  padding: @p;
+}
+
+.flex-layout(@jc, @ai) {
+  display: flex;
+  justify-content: @jc;
+  align-items: @ai;
+}
+
+
+* {
+  // margin: 0;
+  // padding: 0;
+  .spacing(0, 0);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+
+html {
+  font-size: 62.5%;
+}
+
+section {
+  padding: 4%;
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+p {
+  font-size: @base-font;
+}
+
+a {
+  font-size: 1.8rem;
+  color: white;
+}
+
+
+header { 
+  padding: 2%;
+  background-color: @theme-color;
+  
+  nav { 
+    .flex-layout(flex-end, center);
+    
+  
+    @media @tablet { 
+      .flex-layout(center, center);
+    } 
+    
+    @media @mobile { 
+      flex-direction: column;
+    } 
+    
+    a { 
+      .spacing(1%, 2%);
+      // margin: 1%;
+      // padding: 2%;
+      text-align: center;
+      
+    } 
+    
+    a:hover {
+      color: darken(@link-color, 20%);
+    }
+  } 
+} 
+
+
+.about-section { 
+  color: @theme-color;
+  
+  div {
+    .flex-center();
+    .spacing(1%, 5% 1%);
+    
+    p {
+      width: 60%;
+      text-align: center;
+      
+      @media @mobile {
+        width: 90%;
+      }
+    }
+  }
+}
+
+.contact-section {
+  background-color: @theme-color;
+  color: white;
+  
+  div {
+    .flex-center(); 
+    .default-box();
+    
+    a {
+      border: 1px solid @link-color;
+      .default-box();
+      border-radius: 10px;
+      text-align: center;
+    }
+    
+    a:hover {
+      color: darken(@link-color, 20%);
+      border-color: darken(@link-color, 20%);
+    }
+  }
+}
+ 
+img{
+  border-radius: 20px;
+  
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+h2{
+  color: white;
+}
+
+h3{
+  text-align: center;
+  color: black;
+}
+    
+    </style>
+
+</head>
+
+<body>
+
+
+
+<div class="main-content">
+    <header id="home">
+      <nav>
+        <a href="/home.php" target="_top">Home</a>
+        <a href="/about.php" target="_top">About</a>
+        <div>
+       <img src="https://images.app.goo.gl/PKgmogGH3nwBu9Uo7"alt="Logo" class="center">
+      </div>
+          
+        <a href="/photos.php" target="_top">Photos</a>
+        <a href="/contact.php" target="_top">Contact</a>
+      </nav>
+    </header>
+    
+    <section id="water" class="water-section">
+     
+      <div>
+       <img src="https://static.wixstatic.com/media/ae5f85_e45846ffa98a439483d044479e99e6a2~mv2.jpg/v1/fill/w_258,h_316,al_c,q_80,usm_0.66_1.00_0.01/ae5f85_e45846ffa98a439483d044479e99e6a2~mv2.webp" height="300px" width="250px" border="1px"" alt="Drops of water on a leaf" class="center">
+      </div>
+    </section>
+    
+    <section id="contact" class="contact-section">
+      <h2>Welcome to <strong> Water My Plants</strong>!</h2>
+      <h3>We are your friendly reminder when life gets busy!</h3>
+      <div>
+        <a class="btn">Let's Grow!</a>
+      </div>
+      <div> <button type="button">Sign In</button>
+        <button type="button">Sign Up</button>
+      </div>
+    </section>
+  </div>
+  
+</body>
+
+</html>
